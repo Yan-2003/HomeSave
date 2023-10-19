@@ -39,6 +39,13 @@ class SavingsController extends Controller
     public function show(string $id)
     {
         //
+        return Savings::findOr($id, function(){
+            return array(
+                "message" => "the data your trying to access does't exist."
+            );
+        });
+
+
     }
 
     /**
