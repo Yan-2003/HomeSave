@@ -26,3 +26,5 @@ Route::get('/get_savings', [SavingsController::class, 'index']);
 Route::get('/get_savings_byId/{id}', [SavingsController::class, 'show']);
 
 Route::delete('/get_savings/delete/{id}', [SavingsController::class , 'destroy']);
+
+Route::post('/get_savings' , [SavingsController::class, 'store'] );

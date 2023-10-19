@@ -5,6 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Models\Savings;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Http\Requests\SavingRequest;
 
 
 class SavingsController extends Controller
@@ -29,10 +30,13 @@ class SavingsController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(SavingRequest $request)
     {
         //
+        // Retrieve the validated input data...
+         $validated = $request->validated();
 
+        return Savings::create($validated);
     }
 
     /**
