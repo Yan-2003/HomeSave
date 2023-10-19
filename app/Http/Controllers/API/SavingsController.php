@@ -6,6 +6,7 @@ use App\Models\Savings;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+
 class SavingsController extends Controller
 {
     /**
@@ -20,10 +21,10 @@ class SavingsController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+   /*  public function create()
     {
         //
-    }
+    } */
 
     /**
      * Store a newly created resource in storage.
@@ -31,6 +32,7 @@ class SavingsController extends Controller
     public function store(Request $request)
     {
         //
+
     }
 
     /**
@@ -51,10 +53,11 @@ class SavingsController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+   /*  public function edit(string $id)
     {
         //
-    }
+
+    } */
 
     /**
      * Update the specified resource in storage.
@@ -70,5 +73,10 @@ class SavingsController extends Controller
     public function destroy(string $id)
     {
         //
+        $saving = Savings::findOrFail($id);
+        $saving->delete();
+        return  array(
+            "message" => "the data successfully deleted."
+        );
     }
 }

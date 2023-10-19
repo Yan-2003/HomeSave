@@ -24,3 +24,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 Route::get('/get_savings', [SavingsController::class, 'index']);
 
 Route::get('/get_savings_byId/{id}', [SavingsController::class, 'show']);
+
+Route::delete('/get_savings/delete/{id}', [SavingsController::class , 'destroy']);
